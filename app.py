@@ -4,6 +4,7 @@ import os
 os.system('git clone https://github.com/pytorch/fairseq.git; cd fairseq;'
           'git checkout tags/v0.10.1;'
           'pip install --use-feature=in-tree-build ./; cd ..')
+os.system('git clone https://github.com/OFA-Sys/OFA.git')
 os.system('ls -l')
 
 
@@ -11,8 +12,8 @@ import torch
 import numpy as np
 from fairseq import utils, tasks
 from fairseq import checkpoint_utils
-from utils.eval_utils import eval_step
-from tasks.mm_tasks.caption import CaptionTask
+from OFA.utils.eval_utils import eval_step
+from OFA.tasks.mm_tasks.caption import CaptionTask
 from models.ofa import OFAModel
 from PIL import Image
 from torchvision import transforms
