@@ -2,7 +2,6 @@ import os
 
 
 os.system('git clone https://github.com/pytorch/fairseq.git; cd fairseq;'
-          'git checkout tags/v0.10.1;'
           'pip install --use-feature=in-tree-build ./; cd ..')
 os.system('ls -l')
 
