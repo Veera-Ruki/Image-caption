@@ -3,7 +3,7 @@ import os
 import torch
 import numpy as np
 from fairseq import utils, tasks
-from utils import checkpoint_utils
+from fairseq.utils import checkpoint_utils
 from utils.eval_utils import eval_step
 from tasks.mm_tasks.caption import CaptionTask
 from models.ofa import OFAModel
