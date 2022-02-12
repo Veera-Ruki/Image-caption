@@ -1,11 +1,12 @@
-import gradio as gr
 import os
-import torch
-import numpy as np
+
 
 os.system('git clone https://github.com/pytorch/fairseq.git; cd fairseq;'
           'pip install --use-feature=in-tree-build ./; cd ..')
 
+
+import torch
+import numpy as np
 from fairseq import utils, tasks
 from utils import checkpoint_utils
 from utils.eval_utils import eval_step
@@ -13,6 +14,8 @@ from tasks.mm_tasks.caption import CaptionTask
 from models.ofa import OFAModel
 from PIL import Image
 from torchvision import transforms
+import gradio as gr
+
 
 # Register caption task
 tasks.register_task('caption', CaptionTask)
