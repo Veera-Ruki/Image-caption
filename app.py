@@ -2,7 +2,7 @@ import gradio as gr
 import os
 import torch
 import numpy as np
-from fairseq import utils,tasks
+from fairseq import utils, tasks
 from utils import checkpoint_utils
 from utils.eval_utils import eval_step
 from tasks.mm_tasks.caption import CaptionTask
@@ -109,4 +109,4 @@ def image_caption(inp):
 
 
 io = gr.Interface(fn=image_caption, inputs=gr.inputs.Image(type='pil'), outputs='text')
-io.launch(debug=True)
+io.launch(enable_queue=True)
