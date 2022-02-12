@@ -11,8 +11,8 @@ import torch
 import numpy as np
 from fairseq import utils, tasks
 from fairseq import checkpoint_utils
-from OFA.utils.eval_utils import eval_step
-from OFA.tasks.mm_tasks.caption import CaptionTask
+from utils.eval_utils import eval_step
+from tasks.mm_tasks.caption import CaptionTask
 from models.ofa import OFAModel
 from PIL import Image
 from torchvision import transforms
