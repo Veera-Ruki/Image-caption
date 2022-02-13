@@ -116,7 +116,7 @@ description = "Gradio Demo for OFA-Image_Caption. Upload your own image or click
               "\"Submit\" and then wait for the generated caption. "
 article = "<p style='text-align: center'><a href='https://github.com/OFA-Sys/OFA' target='_blank'>OFA Github " \
           "Repo</a></p> "
-examples = [['beatles.jpeg'], ['aurora.jpeg'], ['good_luck.png'], ['pokemon.jpeg'], ['wedding.JPG']]
+examples = [['beatles.jpeg'], ['aurora.jpeg'], ['good_luck.png'], ['pokemon.jpeg']]
 io = gr.Interface(fn=image_caption, inputs=gr.inputs.Image(type='pil'), outputs=gr.outputs.Textbox(label="Caption"),
                   title=title, description=description, article=article, examples=examples,
                   allow_flagging=False, allow_screenshot=False)
