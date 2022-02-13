@@ -1,10 +1,8 @@
 import os
 
-
 os.system('git clone https://github.com/pytorch/fairseq.git; cd fairseq;'
           'pip install --use-feature=in-tree-build ./; cd ..')
 os.system('ls -l')
-
 
 import torch
 import numpy as np
@@ -16,7 +14,6 @@ from models.ofa import OFAModel
 from PIL import Image
 from torchvision import transforms
 import gradio as gr
-
 
 # Register caption task
 tasks.register_task('caption', CaptionTask)
@@ -105,8 +102,8 @@ def apply_half(t):
 
 
 # Function for image captioning
-def image_caption(inp):
-    sample = construct_sample(inp)
+def image_caption(Image):
+    sample = construct_sample(Image)
     sample = utils.move_to_cuda(sample) if use_cuda else sample
     sample = utils.apply_to_sample(apply_half, sample) if use_fp16 else sample
     with torch.no_grad():
@@ -114,5 +111,13 @@ def image_caption(inp):
     return result[0]['caption']
 
 
-io = gr.Interface(fn=image_caption, inputs=gr.inputs.Image(type='pil'), outputs='text')
-io.launch(enable_queue=True)
+title = "OFA-Image_Caption"
+description = "Gradio Demo for OFA-Image_Caption. Upload your own image or click any one of the examples, and click " \
+              "\"Submit\" and then wait for the generated caption. "
+article = "<p style='text-align: center'><a href='https://github.com/OFA-Sys/OFA' target='_blank'>OFA Github " \
+          "Repo</a></p> "
+examples = [['beatles.jpeg'], ['aurora.jpeg'], ['good_luck.png'], ['pokemon.jpeg'], ['cakes.JPG'], ['wedding.JPG']]
+io = gr.Interface(fn=image_caption, inputs=gr.inputs.Image(type='pil'), outputs=gr.outputs.Textbox(label="Caption"),
+                  title=title, description=description, article=article, examples=examples,
+                  allow_flagging=False, allow_screenshot=False)
+io.launch(enable_queue=True, cache_examples=True)
