@@ -120,4 +120,4 @@ examples = [['beatles.jpeg'], ['aurora.jpeg'], ['good_luck.png'], ['pokemons.jpg
 io = gr.Interface(fn=image_caption, inputs=gr.inputs.Image(type='pil'), outputs=gr.outputs.Textbox(label="Caption"),
                   title=title, description=description, article=article, examples=examples,
                   allow_flagging=False, allow_screenshot=False)
-io.launch(enable_queue=True, cache_examples=True)
+io.launch(cache_examples=True)
