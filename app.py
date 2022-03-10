@@ -113,7 +113,7 @@ def image_caption(Image):
 
 title = "OFA-Image_Caption"
 description = "Gradio Demo for OFA-Image_Caption. Upload your own image or click any one of the examples, and click " \
-              "\"Submit\" and then wait for the generated caption. "
+              "\"Submit\" and then wait for the generated caption.  "
 article = "<p style='text-align: center'><a href='https://github.com/OFA-Sys/OFA' target='_blank'>OFA Github " \
           "Repo</a></p> "
 examples = [['beatles.jpeg'], ['aurora.jpeg'], ['good_luck.png'], ['pokemons.jpg'], ['donuts.jpg']]
