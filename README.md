@@ -21,6 +21,5 @@ gradio
 `app_file`: _string_
 app.py
 
-
 `pinned`: _boolean_
 false
